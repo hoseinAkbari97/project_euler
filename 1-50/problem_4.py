@@ -1,16 +1,15 @@
-def is_palindromic(number):
+def is_palindrome(n):
+    return str(n) == str(n)[::-1]
 
-    list = []
+def largest_palindrome_product():
+    max_palindrome = 0
+    for i in range(999, 99, -1):
+        for j in range(i, 99, -1):  # Avoid duplicate pairs like (912, 913) and (913, 912)
+            product = i * j
+            if product <= max_palindrome:
+                break  # Products will get smaller; no need to continue
+            if is_palindrome(product):
+                max_palindrome = product
+    return max_palindrome
 
-    while True:
-        if number < 10:
-            list.insert(0, int(number))
-            return list
-        else:
-            rem = int(number % 10)
-            list.insert(0, rem)
-            number = number/10
-
-input = 1000
-print(is_palindromic(input))
-            
+print(largest_palindrome_product())
