@@ -1,5 +1,3 @@
-import math
-
 def biggest_prime_factor(n):
     factor = 2
     last_factor = 1
