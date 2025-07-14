@@ -14,4 +14,7 @@ def square_sum(num):
         sum += i
     return (sum**2)
 
-print(square_sum(10))
+sq_sum = square_sum(100)
+sum_sq = sum_square(100)
+answer = sq_sum - sum_sq
+print(answer)
